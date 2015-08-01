@@ -1,0 +1,1 @@
+require 'freight_plane'
