@@ -1,0 +1,3 @@
+class CommercialFreight < Freight
+
+end
