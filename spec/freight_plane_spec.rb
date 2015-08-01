@@ -14,4 +14,10 @@ describe FreightPlane do
     expect(plane.capacity).to eq(10)
   end
 
+  it 'does not allow capacity to be updated' do
+    plane = FreightPlane.new(10)
+    expect { plane.capacity = 20 }.to raise_error
+    expect(plane.capacity).to eq(10)
+  end
+
 end
