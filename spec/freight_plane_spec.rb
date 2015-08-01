@@ -8,4 +8,10 @@ describe FreightPlane do
     expect { FreightPlane.new(10) }.to_not raise_error
   end
 
+  it 'exposes its capacity' do
+    plane = FreightPlane.new(10)
+    expect { plane.capacity }.to_not raise_error
+    expect(plane.capacity).to eq(10)
+  end
+
 end
