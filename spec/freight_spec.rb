@@ -11,4 +11,10 @@ describe Freight do
     expect(freight.inspection_passed).to eq(false)
   end
 
+  it 'allows #inspection_passed to be updated after inspection is completed' do
+    freight = Freight.new('asdf', 450)
+    expect { freight.inspection_passed = true }.to_not raise_error
+    expect(freight.inspection_passed).to eq(true)
+  end
+
 end
