@@ -20,4 +20,10 @@ describe FreightPlane do
     expect(plane.capacity).to eq(15)
   end
 
+  it 'starts off with an empty freight manifest' do
+    plane = FreightPlane.new(100)
+    expect { plane.manifest }.to_not raise_error
+    expect(plane.manifest).to eq([])
+  end
+
 end
