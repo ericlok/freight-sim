@@ -26,10 +26,10 @@ describe FreightPlane do
     expect(plane.manifest).to eq([])
   end
 
-  it 'has freight added to its manifest when #load is called' do
+  it 'has freight added to its manifest when #load_up is called' do
     plane = FreightPlane.new(50)
     freight = Object.new
-    expect { plane.load(freight) }.to_not raise_error
+    expect { plane.load_up(freight) }.to_not raise_error
     expect(plane.manifest).to include(freight)
   end
 
