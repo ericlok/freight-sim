@@ -1,0 +1,3 @@
+class IndustrialFreight < Freight
+
+end
