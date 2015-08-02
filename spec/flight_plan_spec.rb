@@ -15,6 +15,7 @@ describe FlightPlan do
 
     it 'raises an error if the root does not exist' do
       expect { FlightPlan.city_at(3, 0) }.to raise_error('Route 3 does not exist')
+      expect { FlightPlan.city_at(4, 0) }.to raise_error('Route 4 does not exist')
     end
 
   end
