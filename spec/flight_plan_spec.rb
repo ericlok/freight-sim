@@ -8,6 +8,11 @@ describe FlightPlan do
       expect(FlightPlan.city_at(2, 2)).to eq('Orlando')
     end
 
+    it 'returns false if the hop is greater than the length of the route' do
+      expect(FlightPlan.city_at(0, 4)).to eq(false)
+      expect(FlightPlan.city_at(2, 3)).to eq(false)
+    end
+
   end
 
 end
