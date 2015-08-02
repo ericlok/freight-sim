@@ -61,6 +61,11 @@ describe FreightPlane do
         expect(@plane.total_load).to eq(1823)
       end
 
+      it 'returns 0 if there is nothing in the manifest' do
+        empty_plane = FreightPlane.new(123)
+        expect(empty_plane.total_load).to eq(0)
+      end
+
     end
 
   end
