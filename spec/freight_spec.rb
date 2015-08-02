@@ -17,4 +17,12 @@ describe Freight do
     expect(freight.inspection_passed).to eq(true)
   end
 
+  it 'exposes a #inspection_passed? method that returns the value of @inspection_passed' do
+    freight = Freight.new('mlanl', 305)
+    expect { freight.inspection_passed? }.to_not raise_error
+    expect(freight.inspection_passed?).to eq(false)
+    freight.inspection_passed = true
+    expect(freight.inspection_passed?).to eq(true)
+  end
+
 end

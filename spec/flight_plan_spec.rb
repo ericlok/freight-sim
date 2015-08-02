@@ -1,0 +1,3 @@
+describe FlightPlan do
+
+end
