@@ -1,0 +1,3 @@
+class SkookumFreightPlane < FreightPlane
+  
+end
