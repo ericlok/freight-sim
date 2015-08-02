@@ -33,4 +33,24 @@ describe FreightPlane do
     expect(plane.manifest).to include(freight)
   end
 
+  describe '#load_count' do
+
+    before :each do
+      @plane = FreightPlane.new(75)
+      @plane.load_up(IndustrialFreight.new('i1', 500))
+      @plane.load_up(IndustrialFreight.new('i2', 488))
+      @plane.load_up(CommercialFreight.new('c1', 502))
+      @plane.load_up(Freight.new('g1', 333))
+    end
+
+    it 'returns how many of a specific type of freight are in the manifest' do
+      expect(@plane.load_count(IndustrialFreight)).to eq(2)
+    end
+
+    it 'returns the total number of freight on the manifest if no type is specified' do
+      expect(@plane.load_count).to eq(4)
+    end
+
+  end
+
 end
