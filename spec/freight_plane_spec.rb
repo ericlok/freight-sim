@@ -39,7 +39,7 @@ describe FreightPlane do
       @plane = FreightPlane.new(75)
       @plane.load_up(IndustrialFreight.new('i1', 500))
       @plane.load_up(IndustrialFreight.new('i2', 488))
-      @plane.load_up(CommercialFreight.new('c1', 502))
+      @plane.load_up(CommercialFreight.new('c1', 502, 5.5))
       @plane.load_up(Freight.new('g1', 333))
     end
 
