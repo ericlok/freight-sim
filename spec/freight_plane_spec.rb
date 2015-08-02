@@ -70,4 +70,38 @@ describe FreightPlane do
 
   end
 
+  describe 'tracking' do
+
+    before :each do
+      @plane = FreightPlane.new(170)
+    end
+
+    it 'should be able to read and write to its @route' do
+      expect(@plane.route).to be_nil
+      expect { @plane.route = 1 }.to_not raise_error
+      expect(@plane.route).to eq(1)
+    end
+
+    it 'should be able to read and write to its @hop' do
+      expect(@plane.hop).to be_nil
+      expect { @plane.hop = 1 }.to_not raise_error
+      expect(@plane.hop).to eq(1)
+    end
+
+    it 'should be able to get the name of the city at its current @route and @hop' do
+      @plane.route = 1
+      @plane.hop = 0
+      expect(@plane.current_city).to eq('Anchorage')
+    end
+
+    it 'goes to the next hop when #next_on_route is called' do
+      @plane.route = 1
+      @plane.hop = 0
+      expect { @plane.next_on_route }.to_not raise_error
+      expect(@plane.hop).to eq(1)
+      expect(@plane.current_city).to eq('Vancouver')
+    end
+
+  end
+
 end
