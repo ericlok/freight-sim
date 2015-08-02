@@ -13,6 +13,10 @@ describe FlightPlan do
       expect(FlightPlan.city_at(2, 3)).to eq(false)
     end
 
+    it 'raises an error if the root does not exist' do
+      expect { FlightPlan.city_at(3, 0) }.to raise_error('Route 3 does not exist')
+    end
+
   end
 
 end
